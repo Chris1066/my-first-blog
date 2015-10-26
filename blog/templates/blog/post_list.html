@@ -10,15 +10,17 @@
         </div>
 
         <div>
-            <p>published: 26.10.2015, 9:57</p>
-            <h2><a href="">My first rant</a></h2>
-            <p>This could be the start of something very nice, my running a blog that I created myself with Django. Of course the lack of any cms like functions makes it difficult, but we'll get over this.</p>
-        </div>
 
-        <div>
-            <p>published: 26.10.2015, 9:58</p>
-            <h2><a href="">My second rant</a></h2>
-            <p>And we'll have to, of course, if Fraxion Payments is to live properly.</p>
+        	{% for post in posts %}
+
+    			<div>
+        			<p>published: {{ post.published_date }}</p>
+        			<h1><a href="">{{ post.title }}</a></h1>
+        			<p>{{ post.text|linebreaks }}</p>
+    			</div>
+
+        	{% endfor %}
+
         </div>
 
 
